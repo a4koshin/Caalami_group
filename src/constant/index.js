@@ -3,9 +3,9 @@ import grout from "../assets/UnStructured/grout.jpg";
 import interlocks from "../assets/UnStructured/interlocks.jpg";
 import jiingad from "../assets/UnStructured/jiingad.jpg";
 import Riinji from "../assets/UnStructured/Riinji.jpg";
-import sanitaryware from "../assets/UnStructured/Sanitaryware.jpg";
+// import sanitaryware from "../assets/UnStructured/Sanitaryware.jpg";
 
-// import sanitaryware from "../assets/UnStructured/sanitaryware.jpg";
+import sanitaryware from "../assets/UnStructured/sanitaryware.jpg";
 
 import spacer from "../assets/UnStructured/spacer.jpg";
 import stepTiles from "../assets/UnStructured/stepTiles.jpg";
