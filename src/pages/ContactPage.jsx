@@ -3,14 +3,6 @@ import Heading from "../components/Heading";
 import Button from "../components/Button";
 import { FaPhoneAlt, FaEnvelope, FaBuilding } from "react-icons/fa";
 import { MdAccessTimeFilled } from "react-icons/md";
-import { motion } from "framer-motion";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-  viewport: { once: true },
-};
 
 const ContactPage = () => {
   const [name, setName] = useState("");
@@ -57,7 +49,6 @@ const ContactPage = () => {
 
     window.open(url, "_blank").focus();
 
-    // Optional: Reset form
     setName("");
     setEmail("");
     setMessage("");
@@ -66,20 +57,14 @@ const ContactPage = () => {
 
   return (
     <>
-      <motion.div {...fadeInUp}>
+      <div className="animate-fadeInUp delay-100">
         <Heading text="Contact us" />
-      </motion.div>
-      <div className="min-h-screen flex items-center justify-center p-6">
-        <motion.div
-          className="bg-[#1c427a] rounded-xl w-full max-w-6xl shadow-2xl p-8 flex flex-col md:flex-row gap-8"
-          {...fadeInUp}
-        >
-          {/* Form Section */}
-          <motion.form
+      </div>
+      <div className="animate-fadeInUp delay-100 min-h-screen flex items-center justify-center p-6">
+        <div className="bg-[#1c427a] rounded-xl w-full max-w-6xl shadow-2xl p-8 flex flex-col md:flex-row gap-8 animate-fade-in-down">
+          <form
             onSubmit={sendToWhatsApp}
-            className="flex-1"
-            {...fadeInUp}
-            transition={{ delay: 0.3 }}
+            className="flex-1 animate-fade-in-down delay-200"
           >
             <h2 className="uppercase text-white text-center text-2xl px-4 py-2 rounded-md font-bold mb-10">
               get in touch
@@ -142,14 +127,9 @@ const ContactPage = () => {
                 className="mt-4 w-80"
               />
             </div>
-          </motion.form>
+          </form>
 
-          {/* Info Section */}
-          <motion.div
-            className="bg-white text-[#1c427a] font-semibold rounded-md p-6 w-full h-80 mt-10 max-w-sm"
-            {...fadeInUp}
-            transition={{ delay: 0.6 }}
-          >
+          <div className="bg-white text-[#1c427a] font-semibold rounded-md p-6 w-full h-80 mt-10 max-w-sm animate-fade-in-down delay-300">
             <h2 className="text-2xl font-bold mb-6">Info</h2>
             <div className="space-y-4">
               <div className="flex items-center gap-2">
@@ -177,8 +157,8 @@ const ContactPage = () => {
                 <p>8:00 AM - 5:00 PM</p>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </>
   );

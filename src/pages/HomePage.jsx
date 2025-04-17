@@ -3,7 +3,6 @@ import Button from "../components/Button.jsx";
 import Footer from "../components/Footer.jsx";
 import AboutPage from "./AboutPage.jsx";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Specialproducts } from "../constant/index.js";
 
 const HomePage = () => {
@@ -15,36 +14,18 @@ const HomePage = () => {
       <div className="h-screen bg-[url('/background.webp')] bg-cover bg-center bg-no-repeat relative">
         <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
         <div className="relative z-10 flex flex-col justify-center h-full px-6 md:px-20 text-white max-w-4xl">
-          <motion.h1
-            className="text-4xl mt-10 md:text-5xl font-bold leading-tight mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <h1 className="text-4xl mt-10 md:text-5xl font-bold leading-tight mb-8 opacity-0 animate-fadeInUp">
             Building Dreams with Strength
             <br />
             and Precision
-          </motion.h1>
-          <motion.p
-            className="text-lg text-gray-300 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
+          </h1>
+          <p className="text-lg text-gray-300 mb-8 opacity-0 animate-fadeInUp delay-200">
             Empowering builders with high-performance, durable equipment.
-            <span className="text-red-500 font-semibold">
-              {" "}
-              At Caalami Group
-            </span>
-            , we make construction smarter, stronger, and seamless — from vision
+            <span className="text-red-500 font-semibold"> Caalami Group</span>,
+            we make construction smarter, stronger, and seamless — from vision
             to reality.
-          </motion.p>
-          <motion.div
-            className="flex flex-wrap gap-4 justify-center md:justify-start"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start opacity-0 animate-fadeInUp delay-400">
             <Button
               text="Learn More"
               bgColor="#1c427a"
@@ -58,18 +39,12 @@ const HomePage = () => {
               variant="outline"
               onClick={() => navigate("/contact")}
             />
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Who We Are Section */}
-      <motion.div
-        className="bg-white text-[#1c427a] py-20 px-6 md:px-20"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
+      <div className="bg-white text-[#1c427a] py-20 px-6 md:px-20 animate-fadeInUp">
         <h2 className="text-3xl font-bold text-[#e73535] text-center mt-10 uppercase mb-10">
           Who We Are
         </h2>
@@ -100,16 +75,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Special Products Section */}
-      <motion.div
-        className="bg-[#1c427a] text-white py-20 px-6 md:px-20"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
+      <div className="bg-[#1c427a] text-white py-20 px-6 md:px-20 animate-fadeInUp">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
             Special Products
@@ -123,10 +92,9 @@ const HomePage = () => {
           </p>
           <div className="grid mb-10 gap-8 md:grid-cols-3">
             {Specialproducts.map((product, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1"
-                whileHover={{ scale: 1.05 }}
               >
                 <div className="text-4xl text-[#1c427a] mb-4">
                   {product.icon}
@@ -135,7 +103,7 @@ const HomePage = () => {
                   {product.title}
                 </h3>
                 <p className="text-gray-600 text-sm">{product.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
           <Button
@@ -145,7 +113,7 @@ const HomePage = () => {
             onClick={() => navigate("/product")}
           />
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };
