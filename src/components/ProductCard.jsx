@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
-// import { useNavigate } from "react-router-dom";
 
-// Modal component (inside same file for simplicity)
+// Modal Component
 const ImageModal = ({ image, title, onClose }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
-      <div className="bg-white p-4 rounded-lg shadow-lg max-w-lg">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      {/* Modal content */}
+      <div className="relative bg-white p-4 rounded-lg shadow-lg max-w-lg z-10">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
         <img
           src={image}
@@ -24,12 +24,12 @@ const ImageModal = ({ image, title, onClose }) => {
   );
 };
 
+// Product Card Component
 const ProductCard = ({ image, title }) => {
-  // const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 relative z-0">
       <div className="bg-white w-[18rem] h-[28rem] shadow-lg rounded-2xl flex flex-col items-center transition-transform transform">
         <img
           src={image}
@@ -38,9 +38,6 @@ const ProductCard = ({ image, title }) => {
         />
         <h3 className="text-lg font-semibold mb-4 text-[#1c427a]">{title}</h3>
 
-        {/* Get it now button */}
-
-        {/* View Product button */}
         <Button
           text="View Product"
           bgColor="#e73535"
