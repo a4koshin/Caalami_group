@@ -58,7 +58,11 @@ const ProductPage = () => {
                   animationFillMode: "both",
                 }}
               >
-                <ProductCard image={product.img} title={product.alt} />
+                <ProductCard
+                  image={product.img}
+                  title={product.alt}
+                  description={product.description}
+                />
               </div>
             ))}
           </div>

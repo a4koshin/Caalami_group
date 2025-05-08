@@ -6,7 +6,6 @@ import Riinji from "../assets/UnStructured/Riinji.jpg";
 // import sanitaryware from "../assets/UnStructured/Sanitaryware.jpg";
 
 import sanitaryware from "../assets/UnStructured/sanitaryware.jpg";
-
 import spacer from "../assets/UnStructured/spacer.jpg";
 import stepTiles from "../assets/UnStructured/stepTiles.jpg";
 import tileAdhe from "../assets/UnStructured/TileAdhesive.jpg";
@@ -50,22 +49,19 @@ export const navigation = [
 
 export const Specialproducts = [
   {
-    title: "Ceramic Tiles",
-    description:
-      "Available in A, B, and C grades with sizes like 20x20 cm, 25x33 cm, 33x33 cm, and 60x60 cm. Ideal for both floor and wall applications.",
-    icon: "🧱",
+    img: tiles,
+    alt: "Tiles",
+    description: "Decorative tiles for floors and walls",
   },
   {
-    title: "Cement",
-    description:
-      "Oman Cement — trusted for residential, commercial, and infrastructure use. Known for its strength and consistency.",
-    icon: "🏗️",
+    img: woodenDoor,
+    alt: "Wooden Door",
+    description: "Strong wooden doors with elegant finish",
   },
   {
-    title: "Paints",
-    description:
-      "Offered in sizes from 0.90L to 5 USG in Black, Yellow, White, and Red. Perfect for vibrant, long-lasting finishes indoors and outdoors.",
-    icon: "🎨",
+    img: interlocks,
+    alt: "Interlocks",
+    description: "Durable interlocks for outdoor paving solutions",
   },
 ];
 
@@ -90,23 +86,83 @@ export const ourVision = [
 // Products
 export const products = {
   Structural: [
-    { img: steelbar, alt: "Steelbars" },
-    { img: Cement, alt: "Cement" },
-    { img: woods, alt: "Woods" },
-    { img: plywood, alt: "Plywood" },
+    {
+      img: steelbar,
+      alt: "Steelbars",
+      description: "Durable steel bars for structural support",
+    },
+    {
+      img: Cement,
+      alt: "Cement",
+      description: "High-strength cement for solid foundations",
+    },
+    {
+      img: woods,
+      alt: "Woods",
+      description: "Quality timber for structural woodwork",
+    },
+    {
+      img: plywood,
+      alt: "Plywood",
+      description: "Multi-purpose plywood for interior construction",
+    },
   ],
   "Non-Structural": [
-    { img: tiles, alt: " Tiles" },
-    { img: bricks, alt: "Bricks " },
-    { img: woodenDoor, alt: "Wooden Door" },
-    { img: sanitaryware, alt: "Sanitary Ware" },
-    { img: tileAdhe, alt: "Tile Adhesive" },
-    { img: grout, alt: "Grout" },
-    { img: spacer, alt: "Tile spacer" },
-    { img: stepTiles, alt: "Step Tiles" },
-    { img: interlocks, alt: "Interlocks" },
-    { img: Riinji, alt: "Paints" },
-    { img: jiingad, alt: "corrugated" },
+    {
+      img: tiles,
+      alt: "Tiles",
+      description: "Decorative tiles for floors and walls",
+    },
+    {
+      img: bricks,
+      alt: "Bricks",
+      description: "Clay bricks for reliable wall construction",
+    },
+    {
+      img: woodenDoor,
+      alt: "Wooden Door",
+      description: "Strong wooden doors with elegant finish",
+    },
+    {
+      img: sanitaryware,
+      alt: "Sanitary Ware",
+      description: "Modern sanitaryware for clean bathroom spaces",
+    },
+    {
+      img: tileAdhe,
+      alt: "Tile Adhesive",
+      description: "Reliable adhesive for lasting tile installation",
+    },
+    {
+      img: grout,
+      alt: "Grout",
+      description: "Smooth grout for perfect tile joints",
+    },
+    {
+      img: spacer,
+      alt: "Tile spacer",
+      description: "Accurate spacers for uniform tile gaps",
+    },
+    {
+      img: stepTiles,
+      alt: "Step Tiles",
+      description: "Slip-resistant tiles for stairs application",
+    },
+    {
+      img: interlocks,
+      alt: "Interlocks",
+      description: "Durable interlocks for outdoor paving solutions",
+    },
+    {
+      img: Riinji,
+      alt: "Paints",
+      description: "Premium paints for vibrant wall finishes",
+    },
+    {
+      img: jiingad,
+      alt: "corrugated",
+      description: "Corrugated sheets for durable roofing needs",
+    },
   ],
 };
 
@@ -125,5 +181,20 @@ export const FooterIcons = [
     id: "2",
     icon: FaEnvelope,
     alt: "caalami@gmail.com",
+  },
+];
+import { FaUsersCog, FaThumbsUp } from "react-icons/fa";
+
+export const features = [
+  {
+    icon: FaUsersCog,
+    title: "Who we are",
+    description:
+      "Innovative, reliable, community-focused, ethical, collaborative, visionary, dedicated.",
+  },
+  {
+    icon: FaThumbsUp,
+    title: "Why Choose Us?",
+    description: "Trusted solutions, proven results, people-first approach.",
   },
 ];

@@ -60,105 +60,79 @@ const ContactPage = () => {
       <div className="animate-fadeInUp delay-100">
         <Heading text="Contact us" />
       </div>
-      <div className="animate-fadeInUp delay-100 min-h-screen flex items-center justify-center p-6">
-        <div className="bg-[#1c427a] rounded-xl w-full max-w-6xl shadow-2xl p-8 flex flex-col md:flex-row gap-8 animate-fade-in-down">
-          <form
-            onSubmit={sendToWhatsApp}
-            className="flex-1 animate-fade-in-down delay-200"
-          >
-            <h2 className="uppercase text-white text-center text-2xl px-4 py-2 rounded-md font-bold mb-10">
-              get in touch
-            </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="text-white mb-1 block">Full Name</label>
-                <input
-                  type="text"
-                  className={`w-full p-3 rounded-md bg-gray-100 focus:outline-2 outline-[#e73535] ${
-                    errors.name ? "border border-red-500" : ""
-                  }`}
-                  placeholder="Your name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-                {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-                )}
-              </div>
-              <div>
-                <label className="text-white mb-1 block">Email Address</label>
-                <input
-                  type="email"
-                  className={`w-full p-3 rounded-md bg-gray-100 focus:outline-2 outline-[#e73535] ${
-                    errors.email ? "border border-red-500" : ""
-                  }`}
-                  placeholder="example@mail.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
-              </div>
-            </div>
+      <div className="flex justify-center items-center min-h-screen p-4 md:mt-[-50px] bg-gray-100">
+        <form
+          onSubmit={sendToWhatsApp}
+          className="w-[800px] bg-white px-4 md:px-10 rounded-2xl py-8"
+        >
+          <h2 className="text-center text-xl font-semibold text-gray-800 mb-6 uppercase">
+            Get in Touch
+          </h2>
 
-            <div className="mt-4">
-              <label className="text-white mb-1 block">Message</label>
-              <textarea
-                rows="5"
-                className={`w-full p-3 rounded-md bg-gray-100 focus:outline-2 outline-[#e73535] ${
-                  errors.message ? "border border-red-500" : ""
+          <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2">
+            <div className="mb-4">
+              <label className="block text-sm text-gray-700 mb-1">
+                Full Name
+              </label>
+              <input
+                type="text"
+                className={`p-2 w-full border rounded-md text-gray-800 ${
+                  errors.name ? "border-red-500" : "border-gray-300"
                 }`}
-                placeholder="Write your message here..."
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+              {errors.name && (
+                <p className="text-red-500 text-xs mt-1">{errors.name}</p>
               )}
             </div>
 
-            <div className="flex justify-center mt-6">
-              <Button
-                text="Get in touch"
-                bgColor="#e73535"
-                hoverBgColor="#e94949"
-                className="mt-4 w-80"
+            <div className="mb-4">
+              <label className="block text-sm text-gray-700 mb-1">
+                Email Address
+              </label>
+              <input
+                type="email"
+                className={`p-2 w-full border rounded-md text-gray-800 ${
+                  errors.email ? "border-red-500" : "border-gray-300"
+                }`}
+                placeholder="example@mail.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-            </div>
-          </form>
-
-          <div className="bg-white text-[#1c427a] font-semibold rounded-md p-6 w-full h-80 mt-10 max-w-sm animate-fade-in-down delay-300">
-            <h2 className="text-2xl font-bold mb-6">Info</h2>
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <span className="text-[#e73535] p-1 rounded-2xl">
-                  <FaEnvelope className="w-8 h-8" />
-                </span>
-                <p>Caalami@gmail.com</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#e73535] p-1 rounded-2xl">
-                  <FaPhoneAlt className="w-8 h-8" />
-                </span>
-                <p>{phoneNumber}</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#e73535] p-1 rounded-2xl">
-                  <FaBuilding className="w-8 h-8" />
-                </span>
-                <p>Bakara Road</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#e73535] p-1 rounded-2xl">
-                  <MdAccessTimeFilled className="w-8 h-8" />
-                </span>
-                <p>8:00 AM - 5:00 PM</p>
-              </div>
+              {errors.email && (
+                <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+              )}
             </div>
           </div>
-        </div>
+
+          <div className="mb-6">
+            <label className="block text-sm text-gray-700 mb-1">Message</label>
+            <textarea
+              rows="4"
+              className={`p-2 w-full border rounded-md text-gray-800 resize-none ${
+                errors.message ? "border-red-500" : "border-gray-300"
+              }`}
+              placeholder="Write your message here..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            {errors.message && (
+              <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+            )}
+          </div>
+
+          <div className="flex justify-center">
+            <Button
+              text="Get in touch"
+              bgColor="#e73535"
+              hoverBgColor="#e94949"
+              className="w-full"
+            />
+          </div>
+        </form>
       </div>
     </>
   );
