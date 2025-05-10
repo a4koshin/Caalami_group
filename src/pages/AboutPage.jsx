@@ -26,7 +26,7 @@ const AboutPage = () => {
                     {item.title}
                   </h2>
                 </div>
-                <p className="text-gray-700 leading-relaxed text-justify">
+                <p className="text-gray-700 leading-8 text-justify">
                   {item.text}
                 </p>
               </div>
@@ -59,7 +59,7 @@ const AboutPage = () => {
                     {item.title}
                   </h2>
                 </div>
-                <p className="text-gray-700 leading-relaxed text-justify">
+                <p className="text-gray-700 leading-8 text-justify">
                   {item.text}
                 </p>
               </div>
@@ -74,13 +74,13 @@ const AboutPage = () => {
               <FaHandsHelping className="text-[#e73535] w-6 h-6" />
               <h2 className="text-2xl font-bold text-[#1c427a]">Our Values</h2>
             </div>
-            <p className="text-gray-700 leading-relaxed text-justify">
+            <p className="text-gray-700 leading-8 text-justify">
               Integrity — We operate with honesty and fairness. Quality — We
               never compromise on excellence. Sustainability — We promote
               responsible development. Customer Focus — Your success is our
               priority. Growth — We evolve with every project we serve
             </p>
-            <p className="text-gray-700 leading-relaxed text-justify">
+            <p className="text-gray-700 leading-8 text-justify">
               We care deeply about our people, our customers, and our country.
               Our team is dedicated to upholding the highest standards while
               building a brighter future for Somalia—one project at a time.
@@ -90,7 +90,7 @@ const AboutPage = () => {
             <img
               src={about1}
               alt="Values"
-              className="w-full max-w-md md:max-w-sm lg:max-w-md h-auto rounded-lg shadow-lg animate-fadeInUp delay-400"
+              className="w-full max-w-md md:max-w-sm lg:max-w-xl h-auto rounded-lg shadow-lg animate-fadeInUp delay-400"
             />
           </div>
         </div>

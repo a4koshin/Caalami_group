@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../components/Button.jsx";
-import Footer from "../components/Footer.jsx";
-import AboutPage from "./AboutPage.jsx";
 import { useNavigate } from "react-router-dom";
 import { Specialproducts } from "../constant/index.js";
 import { features } from "../constant/index.js";
 // import logo from "../assets/logo.png";
-import { FaUsersCog, FaThumbsUp } from "react-icons/fa";
 import ProductCard from "../components/ProductCard.jsx";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  useEffect(()=>{
+    const img = new Image();
+    img.src = "/background.webp";
+
+  },[])
 
   return (
     <>
@@ -78,7 +80,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold text-[#e73535] text-center mt-6">
+        <h2 className="text-3xl font-bold text-[#e73535] text-center mt-10">
           Who We Are
         </h2>
 
@@ -86,7 +88,7 @@ const HomePage = () => {
         <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 items-center justify-items-center lg:justify-items-start py-8">
           {/* paragraph */}
           <div className="flex flex-col justify-center items-center lg:items-start w-full px-4">
-            <p className="mb-6 leading-normal font-semibold text-justify text-[0.95rem] sm:text-base">
+            <p className="mb-6 leading-8 text-justify text-[0.95rem] sm:text-base md:leading-10">
               Caalami General Trading is a privately owned company established
               in February 1999 in Bakaro Market, Somalia. We specialize in
               providing high-quality building materials, including ceramics,
@@ -110,7 +112,7 @@ const HomePage = () => {
             </div>
           </div>
           {/* video */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center md:mt-[-100px]">
             <video
               src="/tilesvid.mp4"
               className="w-full max-w-[600px] h-auto rounded-xl mx-auto"

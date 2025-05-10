@@ -64,7 +64,7 @@ const ContactPage = () => {
       <div className="flex justify-center items-center min-h-screen p-4 md:mt-[-50px] bg-gray-100">
         <form
           onSubmit={sendToWhatsApp}
-          className="w-[800px] bg-white px-4 md:px-10 rounded-2xl py-8"
+          className="w-[800px] bg-white px-4 md:px-10 rounded-2xl py-8 animate-fadeInUp delay-100"
         >
           <h2 className="text-center text-xl font-semibold text-gray-800 mb-6 uppercase">
             Get in Touch
