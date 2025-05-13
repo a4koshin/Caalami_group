@@ -5,17 +5,51 @@ import { Specialproducts } from "../constant/index.js";
 import { features } from "../constant/index.js";
 // import logo from "../assets/logo.png";
 import ProductCard from "../components/ProductCard.jsx";
+import { Helmet } from "react-helmet";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  useEffect(()=>{
+  useEffect(() => {
     const img = new Image();
     img.src = "/background.webp";
-
-  },[])
+  }, []);
 
   return (
     <>
+      <Helmet>
+        <title>Caalami Group | Home</title>
+        <meta
+          name="description"
+          content="Power your projects with Caalami Group’s reliable construction equipment."
+        />
+        <meta
+          name="keywords"
+          content="construction equipment, heavy machinery, sustainable building, Caalami Group, building tools"
+        />
+
+        {/* Open Graph (for Facebook, LinkedIn, etc.) */}
+        <meta property="og:title" content="Caalami Group | Home" />
+        <meta
+          property="og:description"
+          content="Discover reliable construction solutions with Caalami Group."
+        />
+        <meta property="og:image" content="https://caalamigroup.com/logo.png" />
+        <meta property="og:url" content="https://caalamigroup.com/" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:title" content="Caalami Group | Home" />
+        <meta
+          name="twitter:description"
+          content="Top-quality construction equipment at your fingertips."
+        />
+        <meta
+          name="twitter:image"
+          content="https://caalamigroup.com/logo.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
       {/* Hero Section */}
       <div className="h-screen bg-[url('/background.webp')] bg-cover bg-center bg-no-repeat relative">
         {/* Black overlay */}
