@@ -3,15 +3,31 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Preload background image -->
+    <!-- Preload background image for better performance -->
     <link rel="preload" as="image" href="/background.webp" />
 
-    <!-- Favicon: SVG with PNG fallback -->
+    <!-- Favicon for modern browsers (SVG format) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Viewport and title -->
+    <!-- Favicon fallback for older browsers and Google indexing -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Viewport settings for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Website title -->
     <title>Caalami Group Trading Co.</title>
+
+    <!-- Structured data: helps Google display logo in search results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Caalami Group Trading Co.",
+        "url": "https://caalamigroup.com",
+        "logo": "https://caalamigroup.com/logo.png"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
