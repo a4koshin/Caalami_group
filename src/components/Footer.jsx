@@ -37,28 +37,21 @@ const Footer = () => {
               Follow Us
             </h2>
             <div className="flex flex-col gap-[0.9rem] text-left">
-              {FooterIcons.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div className=" ">
-                    <div
-                      key={item.id}
-                      className="flex items-center gap-2 text-[#d9d9d9] cursor-pointer hover:text-[#E73535]"
-                    >
-                      <span className="text-[#e73535]">
-                        <Icon className="w-6 h-6" />
-                      </span>
-                      <span className="font-medium">{item.alt}</span>
-                    </div>
-                  </div>
-                );
-              })}
+              {FooterIcons.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center gap-2 text-[#d9d9d9] cursor-pointer hover:text-[#E73535]"
+                >
+                  <span className="text-[#e73535]">{item.icon}</span>
+                  <span className="font-medium">{item.alt}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </footer>
       <div className="  border-t bg-[#e73535] border-[#1C427A] flex items-center justify-center p-4 text-[#d9d9d9] text-sm">
-        © {new Date().getFullYear()} Caalami Group. All rights reserved.
+        © {new Date().getFullYear()} Caalami Group | Developed by Kooshin
       </div>
     </>
   );
