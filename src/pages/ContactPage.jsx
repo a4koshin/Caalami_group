@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
-import { FaPhoneAlt, FaEnvelope, FaBuilding } from "react-icons/fa";
-import { MdAccessTimeFilled } from "react-icons/md";
+import { supabase } from "../services/supabaseClient"; // import supabase client
 
 const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState("");
   const phoneNumber = "+252614113300";
 
   const validateForm = () => {
@@ -37,22 +37,42 @@ const ContactPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const sendToWhatsApp = (e) => {
+  const sendToWhatsApp = async (e) => {
     e.preventDefault();
+    setStatus("");
+
     if (!validateForm()) return;
 
-    const url =
-      `https://wa.me/${phoneNumber}?text=` +
-      `Name: ${name}%0A` +
-      `Email: ${email}%0A` +
-      `Message: ${message}%0A%0A`;
+    try {
+      // Insert into Supabase
+      const { error } = await supabase.from("contacts").insert([
+        {
+          name,
+          email,
+          message,
+        },
+      ]);
 
-    window.open(url, "_blank").focus();
+      if (error) throw error;
 
-    setName("");
-    setEmail("");
-    setMessage("");
-    setErrors({});
+      // Open WhatsApp with pre-filled message
+      const url =
+        `https://wa.me/${phoneNumber.replace(/\D/g, "")}?text=` +
+        `Name: ${encodeURIComponent(name)}%0A` +
+        `Email: ${encodeURIComponent(email)}%0A` +
+        `Message: ${encodeURIComponent(message)}%0A%0A`;
+
+      window.open(url, "_blank").focus();
+
+      setStatus("Message sent successfully!");
+      setName("");
+      setEmail("");
+      setMessage("");
+      setErrors({});
+    } catch (error) {
+      setStatus("Failed to send message. Please try again.");
+      console.error(error);
+    }
   };
 
   return (
@@ -124,13 +144,24 @@ const ContactPage = () => {
             )}
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center gap-4">
             <Button
               text="Get in touch"
               bgColor="#e73535"
               hoverBgColor="#e94949"
               className="w-full"
             />
+            {status && (
+              <p
+                className={`text-sm ${
+                  status.includes("successfully")
+                    ? "text-green-600"
+                    : "text-red-600"
+                }`}
+              >
+                {status}
+              </p>
+            )}
           </div>
         </form>
       </div>
